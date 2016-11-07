@@ -127,6 +127,7 @@ definitions:
             type: "string"
           email:
             type: "string"
+            default: "blabla"
           identificationType:
             type: "string"
       merchant:
