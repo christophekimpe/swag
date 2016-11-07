@@ -1,0 +1,1845 @@
+---
+swagger: "2.0"
+info:
+  version: "2016-10-11T15:46:24Z"
+  title: "sandbox-proximity"
+host: "9m2h010ne7.execute-api.eu-central-1.amazonaws.com"
+basePath: "/dev"
+schemes:
+- "https"
+paths:
+  /pay-mlv/2.1/e-commerce/ticket/open:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "openRmwTicketInput"
+        required: true
+        schema:
+          $ref: "#/definitions/openRmwTicketInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/openRmwTicketOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-mlv/2.1/e-commerce/ticket/open"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-mlv/2.1/m-commerce/ticket/open:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "openRmwTicketInput"
+        required: true
+        schema:
+          $ref: "#/definitions/openRmwTicketInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/openRmwTicketOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-mlv/2.1/m-commerce/ticket/open"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-mlv/2.1/proximity/ticket/open:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "openRmwTicketInput"
+        required: true
+        schema:
+          $ref: "#/definitions/openRmwTicketInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/openRmwTicketOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-mlv/2.1/proximity/ticket/open"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/e-commerce/attachment:
+    post:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/e-commerce/attachment"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/e-commerce/identification/cancel:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "cancelRmwIdentificationInput"
+        required: true
+        schema:
+          $ref: "#/definitions/cancelRmwIdentificationInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/cancelRmwIdentificationOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/e-commerce/identification/cancel"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/e-commerce/payment/cancel:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "cancelRmwPaymentInput"
+        required: true
+        schema:
+          $ref: "#/definitions/cancelRmwPaymentInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/cancelRmwPaymentOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/e-commerce/payment/cancel"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/e-commerce/payment/check:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "checkRmwPaymentInput"
+        required: true
+        schema:
+          $ref: "#/definitions/checkRmwPaymentInput"
+      responses:
+        200:
+          description: "200 response"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/e-commerce/payment/check"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/e-commerce/payment/perform:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "performRmwPaymentInput"
+        required: true
+        schema:
+          $ref: "#/definitions/performRmwPaymentInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/performRmwPaymentOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/e-commerce/payment/perform"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/e-commerce/retrieveAddress:
+    post:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/e-commerce/retrieveAddress"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/e-commerce/ticket/cancel:
+    post:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/e-commerce/ticket/cancel"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/e-commerce/ticket/close:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "closeRmwTicketInput"
+        required: true
+        schema:
+          $ref: "#/definitions/closeRmwTicketInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/closeRmwTicketOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/e-commerce/ticket/close"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/m-commerce/identification/cancel:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "cancelRmwIdentificationInput"
+        required: true
+        schema:
+          $ref: "#/definitions/cancelRmwIdentificationInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/cancelRmwIdentificationOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/m-commerce/identification/cancel"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/m-commerce/payment/cancel:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "cancelRmwPaymentInput"
+        required: true
+        schema:
+          $ref: "#/definitions/cancelRmwPaymentInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/cancelRmwPaymentOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/m-commerce/payment/cancel"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/m-commerce/payment/check:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "checkRmwPaymentInput"
+        required: true
+        schema:
+          $ref: "#/definitions/checkRmwPaymentInput"
+      responses:
+        200:
+          description: "200 response"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/m-commerce/payment/check"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/m-commerce/payment/init:
+    post:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/m-commerce/payment/init"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/m-commerce/ticket/cancel:
+    post:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/m-commerce/ticket/cancel"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/m-commerce/ticket/close:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "closeRmwTicketInput"
+        required: true
+        schema:
+          $ref: "#/definitions/closeRmwTicketInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/closeRmwTicketOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/m-commerce/ticket/close"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/proximity/identification/cancel:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "cancelRmwIdentificationInput"
+        required: true
+        schema:
+          $ref: "#/definitions/cancelRmwIdentificationInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/cancelRmwIdentificationOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/proximity/identification/cancel"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/proximity/payment/cancel:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "cancelRmwPaymentInput"
+        required: true
+        schema:
+          $ref: "#/definitions/cancelRmwPaymentInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/cancelRmwPaymentOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/proximity/payment/cancel"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/proximity/payment/check:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "checkRmwPaymentInput"
+        required: true
+        schema:
+          $ref: "#/definitions/checkRmwPaymentInput"
+      responses:
+        200:
+          description: "200 response"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/proximity/payment/check"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/proximity/payment/perform:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "performRmwPaymentInput"
+        required: true
+        schema:
+          $ref: "#/definitions/performRmwPaymentInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/performRmwPaymentOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/proximity/payment/perform"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/proximity/ticket/cancel:
+    post:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/proximity/ticket/cancel"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /pay-tm/2.1/proximity/ticket/close:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "closeRmwTicketInput"
+        required: true
+        schema:
+          $ref: "#/definitions/closeRmwTicketInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/closeRmwTicketOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/pay-tm/2.1/proximity/ticket/close"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+  /sso/token:
+    post:
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "Authorization"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "ssoTokenInput"
+        required: true
+        schema:
+          $ref: "#/definitions/ssoTokenInput"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ssoTokenOutput"
+      x-amazon-apigateway-integration:
+        uri: "http://${stageVariables.BaseURL}/sso/token"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.header.Accept: "stageVariables.Accept"
+          integration.request.header.Authorization: "method.request.header.Authorization"
+          integration.request.header.Content-Type: "method.request.header.Content-Type"
+        type: "http"
+definitions:
+  openRmwTicketInput:
+    type: "object"
+    required:
+    - "customer"
+    - "merchant"
+    - "serviceProviderCode"
+    - "ticket"
+    - "timestamp"
+    properties:
+      invocationId:
+        type: "string"
+      timestamp:
+        type: "string"
+      serviceProviderCode:
+        type: "string"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+          orderId:
+            type: "string"
+        required:
+        - "ticketId"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+          email:
+            type: "string"
+          identificationType:
+            type: "string"
+      merchant:
+        type: "object"
+        properties:
+          posId:
+            type: "string"
+          enterpriseCode:
+            type: "string"
+          aggregatorCode:
+            type: "string"
+          tillId:
+            type: "string"
+          storeId:
+            type: "string"
+        required:
+        - "enterpriseCode"
+      categoryList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            category:
+              type: "string"
+    title: "openRmwTicketInput"
+  openRmwTicketOutput:
+    type: "object"
+    required:
+    - "result"
+    properties:
+      result:
+        $ref: "#/definitions/result"
+      invocationId:
+        type: "string"
+      merchant:
+        type: "object"
+        properties:
+          enterpriseCode:
+            type: "string"
+          merchantOptInLevel:
+            type: "string"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+          orderId:
+            type: "string"
+      advantageList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            advantageType:
+              type: "string"
+            name:
+              type: "string"
+            description:
+              type: "string"
+            expirationDate:
+              type: "string"
+            instanceId:
+              type: "string"
+            offerId:
+              type: "string"
+            type:
+              type: "string"
+            merchantReference:
+              type: "string"
+            threshold:
+              type: "string"
+            value:
+              type: "string"
+            exponent:
+              type: "string"
+            currency:
+              type: "string"
+            image:
+              type: "string"
+            origin:
+              type: "string"
+            bosProduct:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  productCodeList:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        productCode:
+                          type: "string"
+                  disjunctionKeyList:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        disjunctionKey:
+                          type: "string"
+                        numberOf:
+                          type: "integer"
+      loyaltyCardList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            barcode:
+              type: "string"
+            balanceValue:
+              type: "string"
+            name:
+              type: "string"
+            type:
+              type: "string"
+            validity:
+              type: "string"
+            accrualExpirationDate:
+              type: "string"
+            cardCode:
+              type: "string"
+            balanceType:
+              type: "string"
+            balanceExponent:
+              type: "string"
+            balanceSymbol:
+              type: "string"
+            balanceSymbolText:
+              type: "string"
+            balanceLabel:
+              type: "string"
+            balanceLabelText:
+              type: "string"
+            balancethreshold:
+              type: "string"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+          name:
+            type: "string"
+          surname:
+            type: "string"
+          email:
+            type: "string"
+          birthdate:
+            type: "string"
+          gender:
+            type: "string"
+          postalAddress:
+            type: "string"
+          additionalAddress:
+            type: "string"
+          postalCode:
+            type: "string"
+          city:
+            type: "string"
+          country:
+            type: "string"
+          ticketPrintingFlag:
+            type: "boolean"
+          paymentMeanFlag:
+            type: "boolean"
+          customerDeviceCapabilities:
+            type: "string"
+    title: "openRmwTicketOutput"
+  performRmwPaymentOutput:
+    type: "object"
+    required:
+    - "result"
+    properties:
+      result:
+        $ref: "#/definitions/result"
+      invocationId:
+        type: "string"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+          orderId:
+            type: "string"
+      payment:
+        type: "object"
+        properties:
+          merchantPaymentId:
+            type: "string"
+          totalAmountPaid:
+            type: "string"
+      merchant:
+        type: "object"
+        properties:
+          enterpriseCode:
+            type: "string"
+          merchantName:
+            type: "string"
+          siretNumber:
+            type: "string"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+      transactionList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            transactionDate:
+              type: "string"
+            transactionId:
+              type: "string"
+            transactionStatus:
+              type: "string"
+            exponent:
+              type: "string"
+            currency:
+              type: "string"
+            amountPaid:
+              type: "string"
+            transactionType:
+              type: "string"
+            cardInfoUsed:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  transactionSchemeUsed:
+                    type: "string"
+                  privativeCardType:
+                    type: "string"
+                  optionUsedList:
+                    type: "object"
+                    properties:
+                      option:
+                        type: "string"
+            signatureFlag:
+              type: "boolean"
+            transactionDetail:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  contractNumber:
+                    type: "string"
+                  maskedPan:
+                    type: "string"
+                  logicalNumber:
+                    type: "string"
+                  transactionNumber:
+                    type: "string"
+                  captureNumber:
+                    type: "string"
+                  commercialName:
+                    type: "string"
+                  authorizationNumber:
+                    type: "string"
+                  transactionReceiptType:
+                    type: "string"
+                  testFlag:
+                    type: "boolean"
+                  receiptHeaderLabel:
+                    type: "string"
+                  customerFooterLabel:
+                    type: "string"
+                  merchantFooterLabel:
+                    type: "string"
+    title: ""
+  cancelRmwIdentificationInput:
+    type: "object"
+    required:
+    - "customer"
+    - "degratedMode"
+    - "merchant"
+    - "merchantActionDate"
+    - "serviceProviderCode"
+    - "ticket"
+    - "timestamp"
+    properties:
+      invocationId:
+        type: "string"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+        required:
+        - "ticketId"
+      serviceProviderCode:
+        type: "string"
+      merchantActionDate:
+        type: "string"
+      degratedMode:
+        type: "boolean"
+      timestamp:
+        type: "string"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+          email:
+            type: "string"
+      merchant:
+        type: "object"
+        properties:
+          posId:
+            type: "string"
+          enterpriseCode:
+            type: "string"
+          aggregatorCode:
+            type: "string"
+        required:
+        - "enterpriseCode"
+    title: "cancelRmwIdentificationInput"
+  closeRmwTicketInput:
+    type: "object"
+    required:
+    - "customer"
+    - "degratedMode"
+    - "merchant"
+    - "merchantActionDate"
+    - "merchantFeedback"
+    - "serviceProviderCode"
+    - "ticket"
+    - "timestamp"
+    properties:
+      invocationId:
+        type: "string"
+      timestamp:
+        type: "string"
+      serviceProviderCode:
+        type: "string"
+      merchantFeedback:
+        type: "string"
+      merchantActionDate:
+        type: "string"
+      degratedMode:
+        type: "boolean"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+        required:
+        - "subscriberCode"
+      merchant:
+        type: "object"
+        properties:
+          enterpriseCode:
+            type: "string"
+          aggregatorCode:
+            type: "string"
+          storeId:
+            type: "string"
+          tillId:
+            type: "string"
+        required:
+        - "enterpriseCode"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+          orderId:
+            type: "string"
+          totalAmount:
+            type: "string"
+          netAmount:
+            type: "string"
+          rmwLoyaltyAmount:
+            type: "string"
+          rmwCouponAmount:
+            type: "string"
+          nonRMWadvantagesAmount:
+            type: "string"
+          currency:
+            type: "string"
+          exponent:
+            type: "string"
+          ticketURL:
+            type: "string"
+          purchaseProofURL:
+            type: "string"
+        required:
+        - "currency"
+        - "exponent"
+        - "netAmount"
+        - "orderId"
+        - "ticketId"
+      transactionList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            transactionId:
+              type: "string"
+            merchantPaymentId:
+              type: "string"
+            transactionDate:
+              type: "string"
+            subscriberCode:
+              type: "string"
+            amountPaid:
+              type: "string"
+            exponent:
+              type: "string"
+            currency:
+              type: "string"
+            tagNonRMWPament:
+              type: "string"
+            transactionType:
+              type: "string"
+            transactionSequenceNumber:
+              type: "string"
+      advantagesEarnedList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            advantagesEarnedValue:
+              type: "string"
+            advantagesEarnedExponent:
+              type: "string"
+            advantagesEarnedSymbol:
+              type: "string"
+            advantagesEarnedSymbolText:
+              type: "string"
+            advantagesEarnedLabel:
+              type: "string"
+            advantagesEarnedLabelText:
+              type: "string"
+            advantagesEarnedThreshold:
+              type: "string"
+      advantageListUSed:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            advantageType:
+              type: "string"
+            instanceId:
+              type: "string"
+            productCodeList:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  productCode:
+                    type: "string"
+            disjunctionKey:
+              type: "integer"
+    title: "closeRmwTicketInput"
+  checkRmwPaymentInput:
+    type: "object"
+    required:
+    - "customer"
+    - "merchant"
+    - "payment"
+    - "serviceProviderCode"
+    - "ticket"
+    - "timestamp"
+    properties:
+      invocationId:
+        type: "string"
+      timestamp:
+        type: "string"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+        required:
+        - "subscriberCode"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+        required:
+        - "ticketId"
+      serviceProviderCode:
+        type: "string"
+      payment:
+        type: "object"
+        properties:
+          merchantPaymentId:
+            type: "string"
+        required:
+        - "merchantPaymentId"
+      merchant:
+        type: "object"
+        properties:
+          enterpriseCode:
+            type: "string"
+          aggregatorCode:
+            type: "string"
+        required:
+        - "enterpriseCode"
+      transactionList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            transactionId:
+              type: "string"
+    title: "checkRmwPaymentInput"
+  result:
+    type: "object"
+    required:
+    - "resultCode"
+    - "resultDescription"
+    - "resultTimestamp"
+    properties:
+      resultCode:
+        type: "string"
+      resultDescription:
+        type: "string"
+      resultTimestamp:
+        type: "string"
+      resultTechnialErrorList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            technicalResultCode:
+              type: "string"
+            technicalResultDescription:
+              type: "string"
+    title: "result"
+  ssoTokenOutput:
+    type: "object"
+    properties:
+      result:
+        $ref: "#/definitions/result"
+    title: "ssoTokenOutput"
+  ssoTokenInput:
+    type: "object"
+    required:
+    - "password"
+    - "username"
+    properties:
+      grant_type:
+        type: "string"
+      username:
+        type: "string"
+      password:
+        type: "string"
+    title: "ssoTokenInput"
+  cancelRmwIdentificationOutput:
+    type: "object"
+    required:
+    - "result"
+    properties:
+      result:
+        $ref: "#/definitions/result"
+      invocationId:
+        type: "string"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+      merchant:
+        type: "object"
+        properties:
+          posId:
+            type: "string"
+          enterpriseCode:
+            type: "string"
+    title: "cancelRmwIdentificationOutput"
+  closeRmwTicketOutput:
+    type: "object"
+    required:
+    - "result"
+    properties:
+      result:
+        $ref: "#/definitions/result"
+      invocationId:
+        type: "string"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+          orderId:
+            type: "string"
+          merchantName:
+            type: "string"
+          siretNumber:
+            type: "string"
+          enterpriseCode:
+            type: "string"
+      misalignmentTransactionList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            transactionId:
+              type: "string"
+            merchantPaymentId:
+              type: "string"
+            transactionDate:
+              type: "string"
+            transactionType:
+              type: "string"
+            amountPaid:
+              type: "string"
+            exponent:
+              type: "string"
+            currency:
+              type: "string"
+            merchantStatus:
+              type: "string"
+            previousRMWStatus:
+              type: "string"
+            newRMWStatus:
+              type: "string"
+            cardInfoUsed:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  transactionSchemeUsed:
+                    type: "string"
+                  privativeCardType:
+                    type: "string"
+                  optionUsedList:
+                    type: "object"
+                    properties:
+                      option:
+                        type: "string"
+            signatureFlag:
+              type: "boolean"
+            transactionDetail:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  contractNumber:
+                    type: "string"
+                  maskedPan:
+                    type: "string"
+                  logicalNumber:
+                    type: "string"
+                  transactionNumber:
+                    type: "string"
+                  captureNumber:
+                    type: "string"
+                  commercialName:
+                    type: "string"
+                  authorizationNumber:
+                    type: "string"
+                  transactionReceiptType:
+                    type: "string"
+                  testFlag:
+                    type: "boolean"
+                  receiptHeaderLabel:
+                    type: "string"
+                  customerFooterLabel:
+                    type: "string"
+                  merchantFooterLabel:
+                    type: "string"
+      advantagesEarnedList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            advantagesEarnedValue:
+              type: "string"
+            advantagesEarnedExponent:
+              type: "string"
+            advantagesEarnedSymbol:
+              type: "string"
+            advantagesEarnedSymbolText:
+              type: "string"
+            advantagesEarnedLabel:
+              type: "string"
+            advantagesEarnedLabelText:
+              type: "string"
+            advantagesEarnedThreshold:
+              type: "string"
+    title: "closeRmwTicketOutput"
+  cancelRmwPaymentInput:
+    type: "object"
+    required:
+    - "customer"
+    - "merchant"
+    - "serviceProviderCode"
+    - "ticket"
+    - "timestamp"
+    properties:
+      invocationId:
+        type: "string"
+      timestamp:
+        type: "string"
+      serviceProviderCode:
+        type: "string"
+      payment:
+        type: "object"
+        properties:
+          merchantPaymentId:
+            type: "string"
+          amountToCancel:
+            type: "string"
+        required:
+        - "merchantPaymentId"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+        required:
+        - "ticketId"
+      merchant:
+        type: "object"
+        properties:
+          posId:
+            type: "string"
+          enterpriseCode:
+            type: "string"
+          aggregatorCode:
+            type: "string"
+        required:
+        - "enterpriseCode"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+      transactionList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            transactionId:
+              type: "string"
+    title: "cancelRmwPaymentInput"
+  cancelRmwPaymentOutput:
+    type: "object"
+    required:
+    - "result"
+    properties:
+      result:
+        $ref: "#/definitions/result"
+      invocationId:
+        type: "string"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+          orderId:
+            type: "string"
+      payment:
+        type: "object"
+        properties:
+          merchantPaymentId:
+            type: "string"
+          totalAmountCancelled:
+            type: "string"
+      merchant:
+        type: "object"
+        properties:
+          enterpriseCode:
+            type: "string"
+          merchantName:
+            type: "string"
+          siretNumber:
+            type: "string"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+      transactionList:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            transactionDate:
+              type: "string"
+            transactionId:
+              type: "string"
+            transactionStatus:
+              type: "string"
+            exponent:
+              type: "string"
+            currency:
+              type: "string"
+            amountPaid:
+              type: "string"
+            cardInfoUsed:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  transactionDate:
+                    type: "string"
+                  transactionId:
+                    type: "string"
+                  transactionStatus:
+                    type: "string"
+                  exponent:
+                    type: "string"
+                  currency:
+                    type: "string"
+                  amountPaid:
+                    type: "string"
+                  transactionType:
+                    type: "string"
+                  cardInfoUsed:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        transactionSchemeUsed:
+                          type: "string"
+                        privativeCardType:
+                          type: "string"
+                        optionUsedList:
+                          type: "array"
+                          items:
+                            type: "object"
+                            properties:
+                              option:
+                                type: "string"
+            signatureFlag:
+              type: "boolean"
+            transactionDetail:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  contractNumber:
+                    type: "string"
+                  maskedPan:
+                    type: "string"
+                  logicalNumber:
+                    type: "string"
+                  transactionNumber:
+                    type: "string"
+                  captureNumber:
+                    type: "string"
+                  commercialName:
+                    type: "string"
+                  authorizationNumber:
+                    type: "string"
+                  transactionReceiptType:
+                    type: "string"
+                  testFlag:
+                    type: "boolean"
+                  receiptHeaderLabel:
+                    type: "string"
+                  customerFooterLabel:
+                    type: "string"
+                  merchantFooterLabel:
+                    type: "string"
+    title: "cancelRmwPaymentOutput"
+  performRmwPaymentInput:
+    type: "object"
+    required:
+    - "customer"
+    - "merchant"
+    - "serviceProviderCode"
+    - "ticket"
+    - "timestamp"
+    properties:
+      invocationId:
+        type: "string"
+      timestamp:
+        type: "string"
+      serviceProviderCode:
+        type: "string"
+      ticket:
+        type: "object"
+        properties:
+          ticketId:
+            type: "string"
+          orderId:
+            type: "string"
+          totalAmount:
+            type: "string"
+          netAmount:
+            type: "string"
+          remainingAmount:
+            type: "string"
+          rmwCouponAmount:
+            type: "string"
+          rmwLoyaltyAmount:
+            type: "string"
+          currency:
+            type: "string"
+          exponent:
+            type: "string"
+        required:
+        - "currency"
+        - "exponent"
+        - "orderId"
+        - "ticketId"
+      customer:
+        type: "object"
+        properties:
+          subscriberCode:
+            type: "string"
+        required:
+        - "subscriberCode"
+      merchant:
+        type: "object"
+        properties:
+          enterpriseCode:
+            type: "string"
+          aggregatorCode:
+            type: "string"
+          storeId:
+            type: "string"
+          tillId:
+            type: "string"
+          pspMerchantId:
+            type: "string"
+          mcc:
+            type: "string"
+          pspId:
+            type: "string"
+        required:
+        - "enterpriseCode"
+        - "mcc"
+        - "pspId"
+        - "pspMerchantId"
+      payment:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            merchantPaymentId:
+              type: "string"
+            amountToPay:
+              type: "string"
+            purchaseDate:
+              type: "string"
+            acceptedPaymentList:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  paymentType:
+                    type: "string"
+            specificPaymentList:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  paymentType:
+                    type: "string"
+                  cardType:
+                    type: "string"
+                  priority:
+                    type: "string"
+                  minAmount:
+                    type: "string"
+                  maxAmount:
+                    type: "string"
+                  currency:
+                    type: "string"
+                  optionList:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        option:
+                          type: "string"
+                  attributesList:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        key:
+                          type: "string"
+                        value:
+                          type: "string"
+          required:
+          - "amountToPay"
+          - "merchantPaymentId"
+          - "purchaseDate"
+      pspOptions:
+        type: "object"
+        properties:
+          operationType:
+            type: "string"
+          captureDate:
+            type: "string"
+    title: "performRmwPaymentInput"
