@@ -4,12 +4,13 @@ info:
   version: "2016-11-07T13:11:27Z"
   title: "sandbox-ckim"
 host: "fpks6x6lid.execute-api.eu-central-1.amazonaws.com"
-basePath: "/test"
+basePath: "/"
 schemes:
 - "https"
 paths:
   /pay-mlv/2.1/e-commerce/ticket/open:
     post:
+      description: Ouvrir un ticket pour le e-commerce
       consumes:
       - "application/json"
       produces:
@@ -35,6 +36,7 @@ paths:
             $ref: "#/definitions/openRmwTicketOutput"
   /pay-mlv/2.1/m-commerce/ticket/open:
     post:
+      description: Ouvrir un ticket pour le m-commerce
       consumes:
       - "application/json"
       produces:
@@ -60,6 +62,7 @@ paths:
             $ref: "#/definitions/openRmwTicketOutput"
   /pay-mlv/2.1/proximity/ticket/open:
     post:
+      description: Ouvrir un ticket
       consumes:
       - "application/json"
       produces:
